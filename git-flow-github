@@ -39,11 +39,11 @@
 GITFLOW_VERSION=0.4.2-pre
 
 usage() {
-	echo "usage: git flow version"
+	echo "usage: git flow github"
 }
 
 cmd_default() {
-	echo "$GITFLOW_VERSION"
+	echo "OH YEAH"
 }
 
 cmd_help() {
