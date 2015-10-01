@@ -7,7 +7,7 @@
 # Licensed under the same restrictions as git-flow:
 # http://github.com/nvie/gitflow/blob/develop/LICENSE
 
-# Does this need to be smarter for each host OS?
+#  Does this need to be smarter for each host OS?
 if [ -z "$INSTALL_PREFIX" ] ; then
 	INSTALL_PREFIX="/usr/local/bin"
 fi
