@@ -70,11 +70,6 @@ parse_args() {
 
 cmd_createrepo() {
 	parse_args "$@"
-	echo "$@"
-	echo "$1"
-	echo "$2"
-	echo $USERNAME
-	echo "$USERNAME"
 
 	curl -u $USERNAME https://api.github.com/user/repos -d '{"name":"'$REPONAME'"}'
 }
