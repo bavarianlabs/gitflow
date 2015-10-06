@@ -9,7 +9,7 @@
 
 #  Does this need to be smarter for each host OS?
 if [ -z "$INSTALL_PREFIX" ] ; then
-	INSTALL_PREFIX="D:\tmp\"
+	INSTALL_PREFIX="/usr/local/bin"
 fi
 
 if [ -z "$REPO_NAME" ] ; then
