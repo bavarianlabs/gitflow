@@ -34,12 +34,19 @@
 # The views and conclusions contained in the software and documentation are
 # those of the authors and should not be interpreted as representing official
 # policies, either expressed or implied, of Vincent Driessen.
-#
+#curl -u luciano-jr https://api.github.com/user/repos -d '{"name":"luciano-jr/teste"}'
 
-GITFLOW_VERSION=0.4.2-pre
+init() {
+	require_git_repo
+	require_gitflow_initialized
+	gitflow_load_settings
+	VERSION_PREFIX=$(eval "echo `git config --get gitflow.prefix.versiontag`")
+	PREFIX=$(git config --get gitflow.prefix.github)
+}
 
 usage() {
 	echo "usage: git flow github"
+	echo "       git flow github createrepo <username-github> <repository>"
 }
 
 cmd_default() {
@@ -49,4 +56,14 @@ cmd_default() {
 cmd_help() {
 	usage
 	exit 0
+}
+
+parse_args() {
+	# parse options
+	FLAGS "$@" || exit $?
+	eval set -- "${FLAGS_ARGV}"
+}
+
+cmd_createrepo() {
+	echo "$@"
 }
