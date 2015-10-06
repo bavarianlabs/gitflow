@@ -62,11 +62,15 @@ parse_args() {
 	# parse options
 	FLAGS "$@" || exit $?
 	eval set -- "${FLAGS_ARGV}"
+
+	# read arguments into global variables
+	USERNAME=$1
+	REPONAME=$2
 }
 
 cmd_createrepo() {
 	echo "$@"
 	echo "$1"
 	echo "$2"
-	 curl -u $1 https://api.github.com/user/repos -d '{"name":"$2"}'
+	 curl -u $USERNAME https://api.github.com/user/repos -d '{"name":"$REPONAME"}'
 }
