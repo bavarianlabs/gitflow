@@ -69,6 +69,7 @@ parse_args() {
 }
 
 cmd_createrepo() {
+	parse_args "$@"
 	echo "$@"
 	echo "$1"
 	echo "$2"
