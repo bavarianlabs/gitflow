@@ -76,5 +76,5 @@ cmd_createrepo() {
 	echo $USERNAME
 	echo "$USERNAME"
 
-	curl -u $USERNAME https://api.github.com/user/repos -d '{"name":"$REPONAME"}'
+	curl -u $USERNAME https://api.github.com/user/repos -d '{"name":"'$REPONAME'"}'
 }
